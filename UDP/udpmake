@@ -1,0 +1,8 @@
+#!/bin/bash
+
+gcc -o serv serv.c
+gcc -o addvoter addvoter.c
+gcc -o zeroize zeroize.c
+gcc -o listcandidates listcandidates.c
+gcc -o votefor votefor.c
+gcc -o votecount votecount.c

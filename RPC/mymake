@@ -1,0 +1,17 @@
+#!/bin/bash
+
+cc -g -DRPC_SVC_FG -c -o vote_clnt.o vote_clnt.c
+cc -g -DRPC_SVC_FG -c -o vote_svc.o vote_svc.c
+cc -g -DRPC_SVC_FG -c -o rzeroize.o rzeroize.c
+cc -g -DRPC_SVC_FG -c -o raddvoter.o raddvoter.c
+cc -g -DRPC_SVC_FG -c -o rvotefor.o rvotefor.c
+cc -g -DRPC_SVC_FG -c -o rlistcandidates.o rlistcandidates.c
+cc -g -DRPC_SVC_FG -c -o rvotecount.o rvotecount.c
+cc -g -DRPC_SVC_FG -c -o vote_server.o vote_server.c
+cc -g -DRPC_SVC_FG -o rzeroize rzeroize.o vote_clnt.o -lnsl
+cc -g -DRPC_SVC_FG -o raddvoter raddvoter.o vote_clnt.o -lnsl
+cc -g -DRPC_SVC_FG -o rvotefor rvotefor.o vote_clnt.o -lnsl
+cc -g -DRPC_SVC_FG -o rlistcandidates rlistcandidates.o vote_clnt.o -lnsl
+cc -g -DRPC_SVC_FG -o rvotecount rvotecount.o vote_clnt.o -lnsl
+cc -g -DRPC_SVC_FG -o vote_server vote_server.o vote_svc.o -lnsl
+
